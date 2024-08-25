@@ -5,7 +5,7 @@ license="GNU GENERAL PUBLIC LICENSE"
 [[mods]] #mandatory
 modId="epicfight" #mandatory
 version="18.5.26" #mandatory
-displayName="Epic Fight" #mandatory
+displayName="Fork Epic Fight" #mandatory
 #displayURL="https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod" #optional
 logoFile="epicfight_logo.png" #optional
 #credits="METAL" #optional
