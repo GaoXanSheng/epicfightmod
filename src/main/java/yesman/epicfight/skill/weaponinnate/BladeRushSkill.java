@@ -16,6 +16,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 import yesman.epicfight.api.animation.types.AttackAnimation;
 import yesman.epicfight.api.animation.types.StaticAnimation;
 import yesman.epicfight.client.events.engine.ControllEngine;
@@ -119,7 +120,7 @@ public class BladeRushSkill extends WeaponInnateSkill {
 	}
 	
 	@Override
-	public void executeOnServer(ServerPlayerPatch executer, FriendlyByteBuf args) {
+	public void executeOnServer(@NotNull ServerPlayerPatch executer, FriendlyByteBuf args) {
 		LivingEntity target = executer.getTarget();
 		boolean execute = false;
 		

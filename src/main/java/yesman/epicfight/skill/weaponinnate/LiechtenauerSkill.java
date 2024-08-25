@@ -22,6 +22,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 import yesman.epicfight.api.utils.AttackResult;
 import yesman.epicfight.client.ClientEngine;
 import yesman.epicfight.client.world.capabilites.entitypatch.player.LocalPlayerPatch;
@@ -134,7 +135,7 @@ public class LiechtenauerSkill extends WeaponInnateSkill {
 	}
 	
 	@Override
-	public void executeOnServer(ServerPlayerPatch executer, FriendlyByteBuf args) {
+	public void executeOnServer(@NotNull ServerPlayerPatch executer, FriendlyByteBuf args) {
 		executer.playSound(SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F);
 		
 		if (executer.getSkill(this).isActivated()) {

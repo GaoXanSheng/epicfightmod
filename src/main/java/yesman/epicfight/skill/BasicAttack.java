@@ -9,6 +9,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.PlayerRideableJumping;
 import net.minecraft.world.entity.player.Player;
+import org.jetbrains.annotations.NotNull;
 import yesman.epicfight.api.animation.property.AnimationProperty.ActionAnimationProperty;
 import yesman.epicfight.api.animation.types.EntityState;
 import yesman.epicfight.api.animation.types.StaticAnimation;
@@ -69,7 +70,7 @@ public class BasicAttack extends Skill {
 	}
 	
 	@Override
-	public void executeOnServer(ServerPlayerPatch executer, FriendlyByteBuf args) {
+	public void executeOnServer(@NotNull ServerPlayerPatch executer, FriendlyByteBuf args) {
 		SkillConsumeEvent event = new SkillConsumeEvent(executer, this, this.resource, true);
 		executer.getEventListener().triggerEvents(EventType.SKILL_CONSUME_EVENT, event);
 		

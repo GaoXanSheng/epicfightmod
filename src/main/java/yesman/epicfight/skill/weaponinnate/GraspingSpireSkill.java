@@ -6,6 +6,7 @@ import java.util.UUID;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 import yesman.epicfight.api.animation.types.AttackAnimation;
 import yesman.epicfight.gameasset.Animations;
 import yesman.epicfight.skill.Skill;
@@ -56,7 +57,7 @@ public class GraspingSpireSkill extends WeaponInnateSkill {
 	}
 	
 	@Override
-	public void executeOnServer(ServerPlayerPatch executer, FriendlyByteBuf args) {
+	public void executeOnServer(@NotNull ServerPlayerPatch executer, FriendlyByteBuf args) {
 		executer.playAnimationSynchronized(this.first, 0.0F);
 		super.executeOnServer(executer, args);
 	}

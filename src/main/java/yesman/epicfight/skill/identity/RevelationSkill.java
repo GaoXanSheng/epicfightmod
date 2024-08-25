@@ -17,6 +17,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 import yesman.epicfight.api.animation.types.StaticAnimation;
 import yesman.epicfight.api.utils.AttackResult.ResultType;
 import yesman.epicfight.client.ClientEngine;
@@ -190,7 +191,7 @@ public class RevelationSkill extends Skill {
 	}
 	
 	@Override
-	public void executeOnServer(ServerPlayerPatch executer, FriendlyByteBuf args) {
+	public void executeOnServer(@NotNull ServerPlayerPatch executer, FriendlyByteBuf args) {
 		super.executeOnServer(executer, args);
 		
 		CapabilityItem holdingItem = executer.getHoldingItemCapability(InteractionHand.MAIN_HAND);

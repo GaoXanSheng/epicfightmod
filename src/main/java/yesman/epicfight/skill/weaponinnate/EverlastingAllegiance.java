@@ -9,6 +9,7 @@ import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 import yesman.epicfight.api.animation.types.StaticAnimation;
 import yesman.epicfight.client.world.capabilites.entitypatch.player.LocalPlayerPatch;
 import yesman.epicfight.gameasset.Animations;
@@ -58,7 +59,7 @@ public class EverlastingAllegiance extends WeaponInnateSkill {
 	}
 	
 	@Override
-	public void executeOnServer(ServerPlayerPatch executer, FriendlyByteBuf args) {
+	public void executeOnServer(@NotNull ServerPlayerPatch executer, FriendlyByteBuf args) {
 		super.executeOnServer(executer, args);
 		
 		if (executer.getOriginal().level.getEntity(executer.getSkill(this).getDataManager().getDataValue(THROWN_TRIDENT_ENTITY_ID)) instanceof ThrownTrident trident) {
