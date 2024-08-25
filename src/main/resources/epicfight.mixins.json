@@ -21,8 +21,8 @@
 		"MixinServerPlayer",
 		"MixinThrownTrident"
 	],
-	"injector": {
+	"refmap": "epicfight.mixins.refmap.json",
+	"injectors": {
 		"defaultRequire": 1
-	},
-	"refmap": "epicfight.mixins.refmap.json"
+	}
 }
