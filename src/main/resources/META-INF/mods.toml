@@ -10,7 +10,7 @@ displayName="Fork Epic Fight" #mandatory
 logoFile="epicfight_logo.png" #optional
 #credits="METAL" #optional
 #authors="Yesman" #optional
-description='''Fight til u dead
+description='''Not related to Epic Fight
 '''
 
 [[dependencies.epicfight]] #optional
