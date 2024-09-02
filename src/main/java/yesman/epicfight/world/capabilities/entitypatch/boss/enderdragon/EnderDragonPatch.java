@@ -242,12 +242,12 @@ public class EnderDragonPatch extends MobPatch<EnderDragon> {
 	@Override
 	public void onDeath(LivingDeathEvent event) {
 		super.onDeath(event);
-		
-		for (Player player : this.contributors.keySet()) {
-			ItemStack skillbook = new ItemStack(EpicFightItems.SKILLBOOK.get());
-			SkillBookItem.setContainingSkill(EpicFightSkills.DEMOLITION_LEAP, skillbook);
-			player.addItem(skillbook);
-		}
+//
+//		for (Player player : this.contributors.keySet()) {
+//			ItemStack skillbook = new ItemStack(EpicFightItems.SKILLBOOK.get());
+//			SkillBookItem.setContainingSkill(EpicFightSkills.DEMOLITION_LEAP, skillbook);
+//			player.addItem(skillbook);
+//		}
 	}
 	
 	public void updateTipPoints() {

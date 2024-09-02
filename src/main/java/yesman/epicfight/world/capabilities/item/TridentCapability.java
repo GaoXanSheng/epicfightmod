@@ -75,14 +75,15 @@ public class TridentCapability extends RangedWeaponCapability {
 	@Nullable
 	@Override
 	public Skill getInnateSkill(PlayerPatch<?> playerpatch, ItemStack itemstack) {
-		if (EnchantmentHelper.getRiptide(itemstack) > 0) {
-			return EpicFightSkills.TSUNAMI;
-		} else if (EnchantmentHelper.hasChanneling(itemstack)) {
-			return EpicFightSkills.WRATHFUL_LIGHTING;
-		} else if (EnchantmentHelper.getLoyalty(itemstack) > 0) {
-			return EpicFightSkills.EVERLASTING_ALLEGIANCE;
-		} else {
-			return null;
-		}
+//		if (EnchantmentHelper.getRiptide(itemstack) > 0) {
+//			return EpicFightSkills.TSUNAMI;
+//		} else if (EnchantmentHelper.hasChanneling(itemstack)) {
+//			return EpicFightSkills.WRATHFUL_LIGHTING;
+//		} else if (EnchantmentHelper.getLoyalty(itemstack) > 0) {
+//			return EpicFightSkills.EVERLASTING_ALLEGIANCE;
+//		} else {
+//			return null;
+//		}
+		return null;
 	}
 }

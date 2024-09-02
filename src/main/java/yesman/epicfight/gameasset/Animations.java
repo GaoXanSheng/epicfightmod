@@ -1002,15 +1002,15 @@ public class Animations {
 				})
 				.addProperty(ActionAnimationProperty.COORD_SET_TICK, null)
 				.addProperty(StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, elapsedTime) -> {
-					if (0.2F > elapsedTime) {
-						if (entitypatch instanceof PlayerPatch<?> playerpatch) {
-							SkillContainer skill = playerpatch.getSkill(EpicFightSkills.METEOR_STRIKE);
-							
-							if (skill != null) {
-								return (float)Math.sqrt(7.0F / MeteorSlamSkill.getFallDistance(skill));
-							}
-						}
-					}
+//					if (0.2F > elapsedTime) {
+//						if (entitypatch instanceof PlayerPatch<?> playerpatch) {
+//							SkillContainer skill = playerpatch.getSkill(EpicFightSkills.METEOR_STRIKE);
+//
+//							if (skill != null) {
+//								return (float)Math.sqrt(7.0F / MeteorSlamSkill.getFallDistance(skill));
+//							}
+//						}
+//					}
 					
 					return 1.0F;
 				})
@@ -1921,14 +1921,14 @@ public class Animations {
 		};
 		
 		public static final AnimationEvent.AnimationEventConsumer FRACTURE_METEOR_STRIKE = (entitypatch, animation, params) -> {
-			if (entitypatch instanceof PlayerPatch<?> playerpatch) {
-				SkillContainer skill = playerpatch.getSkill(EpicFightSkills.METEOR_STRIKE);
-				
-				if (skill != null) {
-					double slamPower = (float)(Math.log(MeteorSlamSkill.getFallDistance(skill) * entitypatch.getOriginal().getAttributeValue(EpicFightAttributes.IMPACT.get())));
-					FRACTURE_GROUND_SIMPLE.fire(entitypatch, animation, params[0], params[1], slamPower, params[2]);
-				}
-			}
+//			if (entitypatch instanceof PlayerPatch<?> playerpatch) {
+//				SkillContainer skill = playerpatch.getSkill(EpicFightSkills.METEOR_STRIKE);
+//
+//				if (skill != null) {
+//					double slamPower = (float)(Math.log(MeteorSlamSkill.getFallDistance(skill) * entitypatch.getOriginal().getAttributeValue(EpicFightAttributes.IMPACT.get())));
+//					FRACTURE_GROUND_SIMPLE.fire(entitypatch, animation, params[0], params[1], slamPower, params[2]);
+//				}
+//			}
 		};
 		
 		public static final AnimationEvent.AnimationEventConsumer SUMMON_THUNDER = (entitypatch, animation, params) -> {
