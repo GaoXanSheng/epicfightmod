@@ -31,8 +31,8 @@ import yesman.epicfight.world.capabilities.item.TagBasedSeparativeCapability;
 import yesman.epicfight.world.capabilities.item.WeaponCapabilityPresets;
 
 public class ItemCapabilityProvider implements ICapabilityProvider, NonNullSupplier<CapabilityItem> {
-	private static final Map<Class<? extends Item>, Function<Item, CapabilityItem.Builder>> CAPABILITY_BY_CLASS = Maps.newHashMap();
-	private static final Map<Item, CapabilityItem> CAPABILITIES = Maps.newHashMap();
+	public static final Map<Class<? extends Item>, Function<Item, CapabilityItem.Builder>> CAPABILITY_BY_CLASS = Maps.newHashMap();
+	public static final Map<Item, CapabilityItem> CAPABILITIES = Maps.newHashMap();
 	
 	public static void registerWeaponTypesByClass() {
 		CAPABILITY_BY_CLASS.put(ArmorItem.class, (item) -> ArmorCapability.builder().item(item));
@@ -77,10 +77,17 @@ public class ItemCapabilityProvider implements ICapabilityProvider, NonNullSuppl
 			}
 		}
 	}
-	
-	private CapabilityItem capability;
-	private LazyOptional<CapabilityItem> optional = LazyOptional.of(this);
-	
+
+	public CapabilityItem capability;
+	public LazyOptional<CapabilityItem> optional = LazyOptional.of(this);
+	public static final Map<String,CapabilityItem> SkillList = Maps.newHashMap();
+	public ItemCapabilityProvider(ItemStack itemstack,String SkillName) {
+		this.capability = CAPABILITIES.get(itemstack.getItem());
+
+		if (this.capability instanceof TagBasedSeparativeCapability) {
+			this.capability = this.capability.getResult(itemstack);
+		}
+	}
 	public ItemCapabilityProvider(ItemStack itemstack) {
 		this.capability = CAPABILITIES.get(itemstack.getItem());
 		
