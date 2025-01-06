@@ -20,7 +20,6 @@ public class CapabilityEvent {
 	public static void attachItemCapability(AttachCapabilitiesEvent<ItemStack> event) {
 		if (event.getObject() != null) {
 			ItemCapabilityProvider prov = new ItemCapabilityProvider(event.getObject());
-			
 			if (prov.hasCapability()) {
 				event.addCapability(new ResourceLocation(EpicFightMod.MODID, "item_cap"), prov);
 			}
@@ -41,15 +40,9 @@ public class CapabilityEvent {
 				entitypatch.onConstructed(event.getObject());
 				event.addCapability(new ResourceLocation(EpicFightMod.MODID, "entity_cap"), prov);
 				
-				if (entitypatch instanceof PlayerPatch<?> playerpatch) {
-					if (event.getObject().getCapability(EpicFightCapabilities.CAPABILITY_SKILL).orElse(null) == null) {
-						
-						if (playerpatch != null) {
-							SkillCapabilityProvider skillProvider = new SkillCapabilityProvider(playerpatch);
-							event.addCapability(new ResourceLocation(EpicFightMod.MODID, "skill_cap"), skillProvider);
-						}
-					}
-				}
+				if (entitypatch instanceof PlayerPatch<?>) {
+                    event.getObject().getCapability(EpicFightCapabilities.CAPABILITY_SKILL).orElse(null);
+                }
 			}
 		}
 	}
